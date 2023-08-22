@@ -6,20 +6,22 @@
 
 const cellsContainer = document.getElementById("cells-container");
 const playButton = document.getElementById("play-button");
-const cellsTotal = 10 * 10;
+const difficultySelect = document.getElementById("difficulty");
 
 playButton.addEventListener("click", function () {
   cellsContainer.innerHTML = "";
-
+  let cellsTotal = parseInt(difficultySelect.value);
+  console.log(cellsTotal);
   for (let i = 1; i <= cellsTotal; i++) {
-    generateGrid(cellsContainer, i);
+    generateGrid(cellsContainer, i, cellsTotal);
   }
 });
 
-function generateGrid(container, i) {
+function generateGrid(container, i, cellsTotal) {
   const cell = document.createElement("li");
   cell.innerText = i;
   cell.classList.add("cell");
+  cell.classList.add("cell-" + cellsTotal);
 
   cell.addEventListener("click", function () {
     cell.classList.toggle("selected-cell");

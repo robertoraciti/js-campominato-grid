@@ -22,6 +22,18 @@ footer {
   align-items: center;
 }
 
+.cell-100 {
+  width: calc(100% / 10);
+}
+
+.cell-81 {
+  width: calc(100% / 9);
+}
+
+.cell-49 {
+  width: calc(100% / 7);
+}
+
 .selected-cell {
   background-color: azure;
 }
